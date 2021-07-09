@@ -1,4 +1,4 @@
-.info-card {
+.base-card {
     --card-blend-mode: overlay;
     min-height: 100%;
     min-width: 100%;
@@ -7,37 +7,58 @@
     box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
     padding: 1em;
     overflow: hidden;
-    display: none;
-    position: relative;
 }
 
-.title {
+.info-card {
+    @extend .base-card;
+    position: relative;
+    display: none;
+}
+
+.base-title {
     justify-self: center;
     align-self: center;
     font-weight: 500;
     font-size: 5em;
     letter-spacing: 3px;
+}
+
+.title {
+    @extend .base-title;
     transform: translateY(70px);
     transition: 0.6s;
 }
 .card-content {
     display: flex;
     flex-direction: column;
-    transform: translateY(80px);
-    opacity: 0;
-    transition: 0.5s;
+    min-width: 100%;
     padding: 0 2em;
     margin-bottom: 2em;
     overflow-y: auto;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: 0.5s;
     p {
         max-width: 100%;
         max-height: 75%;
+    }
+    & .list-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-width: 100%;
+        & ul {
+            list-style-type: none;
+            & li > span {
+                margin-right: 7px;
+            }
+        }
     }
 }
 .card-active:hover {
     .title {
         transition: 0.6s;
-        transform: translate(0, -80%);
+        transform: translate(0, -60%);
     }
     .card-content {
         opacity: 1;
@@ -70,7 +91,7 @@
     justify-self: flex-end;
     min-width: 50%;
     & i {
-        animation: shake 3s cubic-bezier(.64,.32,.89,.64) 5s infinite;
+        animation: shake 3s cubic-bezier(0.64, 0.32, 0.89, 0.64) 5s infinite;
     }
 }
 
@@ -82,7 +103,7 @@
     border: none;
     min-width: 50%;
     & i {
-        animation: shake 3s cubic-bezier(.64,.32,.89,.64) 5s infinite;
+        animation: shake 3s cubic-bezier(0.64, 0.32, 0.89, 0.64) 5s infinite;
     }
 }
 
