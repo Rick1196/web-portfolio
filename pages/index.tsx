@@ -17,15 +17,33 @@ import firestore from '../public/icons/logo-small.png'
 
 import backgroundPic from '../public/pictures/picture-background.png'
 import Image from 'next/image'
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 export default function Home() {
   const [activeCard, setActiveCard] = useState(0);
   const [numberOfCards, setNumberOfCards] = useState(0);
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
   useEffect(() => {
     const elementCards = document.getElementsByClassName('info-card');
     setNumberOfCards(elementCards.length - 1);
   }, [])
+  const sendMail = (data: { title: string, email: string, message: string }) => {
+    console.log('Sending', data);
+    // fetch('/api/contact', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Accept': 'application/json, text/plain, */*',
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(formData)
+    // }).then((res) => {
+    //   console.log('Response received')
+    //   if (res.status === 200) {
+    //     console.log('Response succeeded!')
+    //   }
+    // })
+  }
   const changeCardLeft = () => {
     console.log('changeCardLeft', numberOfCards, activeCard, typeof (activeCard))
     if (activeCard === 0) {
@@ -184,21 +202,21 @@ export default function Home() {
           <div className="contact-container">
             <div className="contact-card">
               <div className="contact-title">Contact Me</div>
-              <form className="contact-form">
+              <form className="contact-form" onSubmit={handleSubmit(sendMail)}>
                 <div className="form-group">
                   <label htmlFor="title">Title</label>
-                  <input type="text" id="title" name="title" />
+                  <input  {...register("title", { required: true })} type="text" id="title" name="title" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="title">Your email address</label>
-                  <input type="email" id="email" name="email" />
+                  <input {...register("email", { required: true })} type="email" id="email" name="email" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="Message">Message</label>
-                  <textarea name="message" id="message" cols={30} rows={10}></textarea>
+                  <textarea {...register("message", { required: true })} name="message" id="message" cols={30} rows={10}></textarea>
                 </div>
                 <div className="form-footer">
-                  <button className="submit-button">Send</button>
+                  <button type='submit' className="submit-button">Send</button>
                 </div>
               </form>
             </div>
