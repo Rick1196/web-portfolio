@@ -30,19 +30,19 @@ export default function Home() {
   }, [])
   const sendMail = (data: { title: string, email: string, message: string }) => {
     console.log('Sending', data);
-    // fetch('/api/contact', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept': 'application/json, text/plain, */*',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(formData)
-    // }).then((res) => {
-    //   console.log('Response received')
-    //   if (res.status === 200) {
-    //     console.log('Response succeeded!')
-    //   }
-    // })
+    fetch('/api/email-service', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+      }
+    })
   }
   const changeCardLeft = () => {
     console.log('changeCardLeft', numberOfCards, activeCard, typeof (activeCard))

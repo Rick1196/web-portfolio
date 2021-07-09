@@ -1,19 +1,13 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const sendMail = async (data) => {
+type Data = {
+  title: string,
+  email: string,
+  message: string
+}
 
-  try {
-    await fetch("/api/contact", {
-      "method": "POST",
-      "headers": { "content-type": "application/json" },
-      "body": JSON.stringify(data)
-    })
-
-          //if sucess do whatever you like, i.e toast notification
-    setTimeout(() => reset(), 2000);
-  } catch (error) {
-      // toast error message. whatever you wish 
-  }
-
+// eslint-disable-next-line import/no-anonymous-default-export
+export default (req: NextApiRequest, res: NextApiResponse<any>) => {
+  console.log(req.body);
+  res.status(200).json(req.body);
 }
