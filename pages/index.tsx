@@ -19,16 +19,18 @@ import backgroundPic from '../public/pictures/picture-background.png'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-
+interface ContactDataI { title: string, email: string, message: string };
 export default function Home() {
   const [activeCard, setActiveCard] = useState(0);
   const [numberOfCards, setNumberOfCards] = useState(0);
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const [loadingForm, setLoadingForm] = useState(false);
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactDataI>();
   useEffect(() => {
     const elementCards = document.getElementsByClassName('info-card');
     setNumberOfCards(elementCards.length - 1);
   }, [])
-  const sendMail = (data: { title: string, email: string, message: string }) => {
+  const sendMail = (data: ContactDataI) => {
+    setLoadingForm(true);
     console.log('Sending', data);
     fetch('/api/email-service', {
       method: 'POST',
@@ -38,10 +40,12 @@ export default function Home() {
       },
       body: JSON.stringify(data)
     }).then((res) => {
+      reset({ email: '', title: '', message: '' });
       console.log('Response received')
       if (res.status === 200) {
         console.log('Response succeeded!')
       }
+      setLoadingForm(false);
     })
   }
   const changeCardLeft = () => {
@@ -216,7 +220,10 @@ export default function Home() {
                   <textarea {...register("message", { required: true })} name="message" id="message" cols={30} rows={10}></textarea>
                 </div>
                 <div className="form-footer">
-                  <button type='submit' className="submit-button">Send</button>
+                  <button type='submit' className="submit-button" disabled={loadingForm}>
+                    Send
+                    {(loadingForm) && <div className="loading-spinner"></div>}
+                  </button>
                 </div>
               </form>
             </div>
