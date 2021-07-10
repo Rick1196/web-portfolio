@@ -5,13 +5,11 @@ import profilePic from '../public/pictures/self.jpg'
 
 //icons
 import nextLogo from '../public/icons/next.jpg'
-import cSharp from '../public/icons/c-sharp.jpg'
 import express from '../public/icons/express.jpg'
 import flask from '../public/icons/flask-logo.png'
 import mongoDb from '../public/icons/mongodb-logo.png'
 import mySql from '../public/icons/my-sql.png'
-import netCore from '../public/icons/net-core.png'
-import postgre from '../public/icons/postgre.png'
+import postgre from '../public/icons/Postgre.png'
 import sqlServer from '../public/icons/sql-server-min.png'
 import firestore from '../public/icons/logo-small.png'
 
@@ -161,7 +159,6 @@ export default function Home() {
                       <li><span><i className="fab fa-js"></i></span>Java Script</li>
                       <li><span><i className="fab fa-css3-alt"></i></span>CSS</li>
                       <li><span><i className="fab fa-python"></i></span>Python</li>
-                      <li><span> <Image className="circle-picture" alt="csharp-logo" src={cSharp} height={14} width={16} /></span>C#</li>
                     </ul>
                   </div>
                   <div>
@@ -177,7 +174,6 @@ export default function Home() {
                     <ul id="back-end">
                       <li><span><Image className="circle-picture" alt="csharp-logo" src={express} height={14} width={16} /></span>Express JS</li>
                       <li><span><Image className="circle-picture" alt="csharp-logo" src={flask} height={14} width={16} /></span>Flask</li>
-                      <li><span><Image className="circle-picture" alt="csharp-logo" src={netCore} height={14} width={16} /></span>Net Core</li>
                     </ul>
                   </div>
                   <div>
