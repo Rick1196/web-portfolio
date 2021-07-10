@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.scss'
 import PersonalInfoSection from '../src/compontents/sections/personal-info-section/personal-info-container';
 import React from 'react';
 import ContactSection from '../src/compontents/sections/contact-section/contact-container';
+import ProjectsSections from '../src/compontents/sections/projects-section/projects-container';
 export default function Home() {
 
   return (
@@ -49,13 +50,15 @@ export default function Home() {
           <PersonalInfoSection />
         </section>
         <section id="projects-rail" className="section-container">
-
+          <ProjectsSections />
         </section>
-        <section id="contact-form" className="section-container">
+        <section id="contact-form" className="section-container-sm">
           <ContactSection />
         </section>
       </main>
-      <footer className={styles.footer}>
+      <footer>
+        <div>Socila Media</div>
+        <div>Me</div>
       </footer>
     </div>
   )
