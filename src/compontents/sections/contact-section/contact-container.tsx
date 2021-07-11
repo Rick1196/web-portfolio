@@ -30,19 +30,19 @@ const ContactSection: React.ComponentType<Record<string, never>> = () => {
                     <div className="contact-title">Contact Me</div>
                     <form className="contact-form" onSubmit={handleSubmit(sendMail)}>
                         <div className="form-group">
-                            <label htmlFor="title">Title</label>
-                            <input  {...register("title", { required: true })} type="text" id="title" name="title" />
+                            <label htmlFor="message-title">Title</label>
+                            <input  {...register("title", { required: true })} type="text" id="message-title" name="message-title" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="title">Your email address</label>
-                            <input {...register("email", { required: true })} type="email" id="email" name="email" />
+                            <label htmlFor="email-address">Your email address</label>
+                            <input {...register("email", { required: true })} type="email" id="email-address" name="email-address" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="Message">Message</label>
-                            <textarea {...register("message", { required: true })} name="message" id="message" cols={30} rows={10}></textarea>
+                            <label htmlFor="message-content">Message</label>
+                            <textarea {...register("message", { required: true })} name="message-content" id="message-content" cols={30} rows={10}></textarea>
                         </div>
                         <div className="form-footer">
-                            <button type='submit' className="submit-button" disabled={loadingForm}>
+                            <button type='submit' className="submit-button" name="send-message" disabled={loadingForm}>
                                 Send
                                 {(loadingForm) && <div className="loading-spinner"></div>}
                             </button>

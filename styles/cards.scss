@@ -18,15 +18,18 @@
 .base-title {
     justify-self: center;
     align-self: center;
-    font-weight: 500;
-    font-size: 5em;
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
     letter-spacing: 3px;
 }
 
 .title {
     @extend .base-title;
-    transform: translateY(70px);
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
     transition: 0.6s;
+    text-align: center;
 }
 .card-content {
     display: flex;
@@ -57,8 +60,10 @@
 }
 .card-active:hover {
     .title {
-        transition: 0.6s;
-        transform: translate(0, -60%);
+        transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+        align-self: center;
+        justify-self: flex-start;
+        position: relative;
     }
     .card-content {
         opacity: 1;
@@ -162,9 +167,7 @@
                 max-width: 100%;
                 max-height: 40%;
                 bottom: auto;
-                // position: relative;
             }
-            // object-fit: fill;
             & .bordered {
                 border-radius: 2rem 2em 2em 2em;
                 width: 100%;

@@ -26,7 +26,6 @@ const PersonalInfoSection: React.ComponentType<Record<string, never>> = () => {
         setNumberOfCards(elementCards.length - 1);
     }, [])
     const changeCardLeft = () => {
-        console.log('changeCardLeft', numberOfCards, activeCard, typeof (activeCard))
         if (activeCard === 0) {
             setActiveCard(numberOfCards);
         } else {
@@ -34,9 +33,7 @@ const PersonalInfoSection: React.ComponentType<Record<string, never>> = () => {
         }
     }
     const changeCardRight = () => {
-        console.log('changeCardRight', activeCard, numberOfCards)
         if (activeCard === (numberOfCards)) {
-            console.log('changeCardRight reset to 0', activeCard, numberOfCards, typeof (activeCard))
             setActiveCard(0);
         } else {
             setActiveCard(activeCard + 1);
@@ -99,7 +96,7 @@ const PersonalInfoSection: React.ComponentType<Record<string, never>> = () => {
                             <div>
                                 <label htmlFor="languages">Languages</label>
                                 <ul id="languages">
-                                    <li><span><i className="fab fa-js"></i></span>Java Script</li>
+                                    <li><span><i  className="fab fa-js"></i></span>Java Script</li>
                                     <li><span><i className="fab fa-css3-alt"></i></span>CSS</li>
                                     <li><span><i className="fab fa-python"></i></span>Python</li>
                                 </ul>
@@ -109,24 +106,24 @@ const PersonalInfoSection: React.ComponentType<Record<string, never>> = () => {
                                 <ul id="front-end">
                                     <li><span><i className="fab fa-angular"></i></span>Angular</li>
                                     <li><span><i className="fab fa-react"></i></span>React</li>
-                                    <li><span><Image className="circle-picture" alt="csharp-logo" src={nextLogo} height={14} width={16} /></span>Next</li>
+                                    <li><span><Image className="circle-picture" alt="next-logo" src={nextLogo} height={14} width={16} /></span>Next</li>
                                 </ul>
                             </div>
                             <div>
                                 <label htmlFor="back-end">Back end</label>
                                 <ul id="back-end">
-                                    <li><span><Image className="circle-picture" alt="csharp-logo" src={express} height={14} width={16} /></span>Express JS</li>
-                                    <li><span><Image className="circle-picture" alt="csharp-logo" src={flask} height={14} width={16} /></span>Flask</li>
+                                    <li><span><Image className="circle-picture" alt="express-logo" src={express} height={14} width={16} /></span>Express JS</li>
+                                    <li><span><Image className="circle-picture" alt="flask-logo" src={flask} height={14} width={16} /></span>Flask</li>
                                 </ul>
                             </div>
                             <div>
                                 <label htmlFor="database">Databases</label>
                                 <ul id="database">
-                                    <li><span><Image className="circle-picture" alt="csharp-logo" src={mySql} height={14} width={16} /></span>My SQL</li>
-                                    <li><span><Image className="circle-picture" alt="csharp-logo" src={postgre} height={14} width={16} /></span>PostgreSQL</li>
-                                    <li><span><Image className="circle-picture" alt="csharp-logo" src={sqlServer} height={14} width={16} /></span>SQL Server</li>
-                                    <li><span><Image className="circle-picture" alt="csharp-logo" src={mongoDb} height={14} width={16} /></span>Mongo DB</li>
-                                    <li><span><Image className="circle-picture" alt="csharp-logo" src={firestore} height={14} width={16} /></span>Firestore</li>
+                                    <li><span><Image className="circle-picture" alt="flask-logo" src={mySql} height={14} width={16} /></span>My SQL</li>
+                                    <li><span><Image className="circle-picture" alt="postgre-logo" src={postgre} height={14} width={16} /></span>PostgreSQL</li>
+                                    <li><span><Image className="circle-picture" alt="sql-logo" src={sqlServer} height={14} width={16} /></span>SQL Server</li>
+                                    <li><span><Image className="circle-picture" alt="mongo-logo" src={mongoDb} height={14} width={16} /></span>Mongo DB</li>
+                                    <li><span><Image className="circle-picture" alt="firestore-logo" src={firestore} height={14} width={16} /></span>Firestore</li>
                                 </ul>
                             </div>
                         </div>
