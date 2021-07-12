@@ -316,6 +316,14 @@ nav {
 .section-container {
   min-height: 100vh;
   min-width: 100%;
+  & .section-title{
+    min-width: 100%;
+    max-width: 100%;
+    text-align: center;
+    min-height: 10vh;
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+  }
 }
 
 .section-container-sm {

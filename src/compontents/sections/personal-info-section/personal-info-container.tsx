@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // font awsome icons
 import "@fortawesome/fontawesome-free/css/all.min.css";
 // profile pic  import
@@ -17,11 +17,15 @@ import firestore from '../../../../public/icons/logo-small.png'
 import backgroundPic from '../../../../public/pictures/picture-background.png'
 import Image from 'next/image'
 import moment from 'moment';
+import { Trans, useTranslation } from "next-i18next";
 
 const PersonalInfoSection: React.ComponentType<Record<string, never>> = () => {
+    const { t } = useTranslation('common');
     const [activeCard, setActiveCard] = useState(0);
     const [numberOfCards, setNumberOfCards] = useState(0);
+    const [age, setAge] = useState(0);
     useEffect(() => {
+        setAge(calculateAge());
         const elementCards = document.getElementsByClassName('info-card');
         setNumberOfCards(elementCards.length - 1);
     }, [])
@@ -56,14 +60,15 @@ const PersonalInfoSection: React.ComponentType<Record<string, never>> = () => {
             <div id="info-container" className="info-container">
                 <div className={(activeCard === 0) ? "info-card card-active" : "info-card"}>
                     <div className="title">
-                        About my self
+                        {t('sections.personalSection.subsSections.aboutMe.title')}
                     </div>
                     <div className="card-content">
-                        <p> Hi there, I&apos;m <strong>Ricardo Perez</strong>, I&apos;m from Mexico and currently I live at Mexico City.
-                            I&apos;m {calculateAge()} years old</p>
                         <p>
-                            I&apos;m a huge fan of video games and science fiction, I try to organize me to have time to play video games at least twice a week,
-                            spend enough time with my family and friends and have time for my self as well as my work and keep learning  web development stuff.
+                            <Trans i18nKey="sections.personalSection.subsSections.aboutMe.content" values={{ age: age }}>
+                            </Trans>
+                        </p>
+                        <p>
+                            {t('sections.personalSection.subsSections.aboutMe.hobbies')}
                         </p>
                     </div>
                     <div className="card-footer">
@@ -73,13 +78,11 @@ const PersonalInfoSection: React.ComponentType<Record<string, never>> = () => {
                 </div>
                 <div className={(activeCard === 1) ? "info-card card-active" : "info-card"}>
                     <div className="title">
-                        My background
+                        {t('sections.personalSection.subsSections.background.title')}
                     </div>
                     <div className="card-content">
                         <p>
-                            For the last two years I&apos;ve been a web developer in a professional level, the first nine months I work as a full stack developer,
-                            then I moved to a front end position, where I currently stay working; Before that, when I was at college,
-                            I participate as volunteer developing projects for my faculty alongside some of my classmates.
+                            {t('sections.personalSection.subsSections.background.content')}
                         </p>
                     </div>
                     <div className="card-footer">
@@ -89,15 +92,17 @@ const PersonalInfoSection: React.ComponentType<Record<string, never>> = () => {
                 </div>
                 <div className={(activeCard === 2) ? "info-card card-active" : "info-card"}>
                     <div className="title">
-                        My Hard skills
+                        {t('sections.personalSection.subsSections.skills.title')}
                     </div>
                     <div className="card-content">
                         <div className="list-grid">
                             <div>
-                                <label htmlFor="languages">Languages</label>
+                                <label htmlFor="languages">{t('sections.personalSection.subsSections.skills.skills.languages')}
+                                </label>
                                 <ul id="languages">
-                                    <li><span><i  className="fab fa-js"></i></span>Java Script</li>
+                                    <li><span><i className="fab fa-html5"></i></span>HTML</li>
                                     <li><span><i className="fab fa-css3-alt"></i></span>CSS</li>
+                                    <li><span><i className="fab fa-js"></i></span>Java Script</li>
                                     <li><span><i className="fab fa-python"></i></span>Python</li>
                                 </ul>
                             </div>
@@ -117,7 +122,7 @@ const PersonalInfoSection: React.ComponentType<Record<string, never>> = () => {
                                 </ul>
                             </div>
                             <div>
-                                <label htmlFor="database">Databases</label>
+                                <label htmlFor="database">{t('sections.personalSection.subsSections.skills.skills.databases')}</label>
                                 <ul id="database">
                                     <li><span><Image className="circle-picture" alt="flask-logo" src={mySql} height={14} width={16} /></span>My SQL</li>
                                     <li><span><Image className="circle-picture" alt="postgre-logo" src={postgre} height={14} width={16} /></span>PostgreSQL</li>

@@ -30,7 +30,7 @@ export default function Home() {
 
       <nav>
         <div id="nav-actions" className="nav-actions">
-          <Link href=''
+          <Link href='/'
             locale={router.locale === 'en' ? 'es' : 'en'} scroll={false} passHref>
             <button name="translate" className="nav-action-lang" id="language">
               <span><i className="fas fa-language"></i></span>
@@ -72,8 +72,9 @@ export default function Home() {
           <div>
             <Link href="https://www.linkedin.com/in/ricardo-manuel-p%C3%A9rez-plata-533037176/" passHref><a target="_blank"> <i className="fab fa-linkedin"></i></a></Link>
           </div>
-          <div></div>
-          <div></div>
+          <div>
+            <a href="mailto:ricardompp11@gmail.com">ricardompp11@gmail.com</a>
+          </div>
         </div>
         <div><strong> Ricardo Manuel Perez</strong>, Web Developer</div>
       </footer>

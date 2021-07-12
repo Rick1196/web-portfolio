@@ -1,12 +1,12 @@
 {
     "navigationBar": {
         "links": {
-            "personalInfo":"Personal Info",
-            "projects":"Projects",
-            "contact":"Contact"
+            "personalInfo": "Personal Info",
+            "projects": "Projects",
+            "contact": "Contact"
         },
-        "buttons":{
-            "translate":"Translate to ES"
+        "buttons": {
+            "translate": "Translate to ES"
         }
     },
     "sections": {
@@ -27,6 +27,30 @@
                 }
             },
             "sendButton": "Send"
+        },
+        "projectsSections": {
+            "title": "My projects",
+            "commonButton": "View a live demo"
+        },
+        "personalSection": {
+            "subsSections": {
+                "aboutMe": {
+                    "title": "Aboud my self",
+                    "contet": "Hi there!, I'm Ricardo Perez, I'm <1>{{age}}</1> years old and currently I live at Mexico City.",
+                    "hobbies": " I'm a huge fan of video games and science fiction, I try to organize me to have time to play video games at least twice a week, spend enough time with my family, my friends, have time for my self as well as my work and keep improving my developer skills."
+                },
+                "background": {
+                    "title": "My background",
+                    "contet": "For the last two years I&apos;ve been a web developer in a professional level, the first nine months I worked as a full stack developer, then I moved to a front end position, where I currently stay working; Before that, when I was at college, I participate as volunteer developing projects for my faculty alongside some of my classmates."
+                },
+                "skills": {
+                    "title": "My hard skills",
+                    "skills": {
+                        "languages":"Languages",
+                        "databases":"Databases"
+                    }
+                }
+            }
         }
     }
 }

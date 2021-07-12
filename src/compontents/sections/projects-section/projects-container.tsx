@@ -1,8 +1,13 @@
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image'
 import nextLogo from '../../../../public/icons/next.jpg'
 const ProjectsSections: React.ComponentType<Record<string, never>> = () => {
+    const { t } = useTranslation('common');
     return (
         <>
+            <div className="section-title">
+                {t('sections.projectsSections.title')}
+            </div>
             <div className="cards-deck">
                 <div className="item-card">
                     <div className="card-item-header">
@@ -13,7 +18,7 @@ const ProjectsSections: React.ComponentType<Record<string, never>> = () => {
                     </div>
                     <div className="card-item-footer">
                         <button type='submit' className="submit-button">
-                            View a live demo
+                            {t('sections.projectsSections.commonButton')}
                         </button>
                     </div>
                 </div>

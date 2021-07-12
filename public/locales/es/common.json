@@ -1,12 +1,12 @@
 {
     "navigationBar": {
         "links": {
-            "personalInfo":"Información personal",
-            "projects":"Projectos",
-            "contact":"Contacto"
+            "personalInfo": "Información personal",
+            "projects": "Projectos",
+            "contact": "Contacto"
         },
-        "buttons":{
-            "translate":"Traducier a EN"
+        "buttons": {
+            "translate": "Traducier a EN"
         }
     },
     "sections": {
@@ -27,6 +27,30 @@
                 }
             },
             "sendButton": "Enviar"
+        },
+        "projectsSections": {
+            "title": "Mis proyectos",
+            "commonButton": "Ver un demo"
+        },
+        "personalSection": {
+            "subsSections": {
+                "aboutMe": {
+                    "title": "Acerca de mi",
+                    "content": "Hola!,Soy Ricardo Pérez, tengo <1>{{age}}</1> años y actualmente vivo en la Ciudad de México.",
+                    "hobbies": "Soy un gran fanático de los videojuegos y la ciencia ficción, trato de organizarme para tener tiempo para jugar videojuegos al menos dos veces por semana, pasar suficiente tiempo con mi familia y amigos, tener tiempo para mí, para mi trabajo y seguir mejorando mis habilidades como desarrollador."
+                },
+                "background": {
+                    "title": "Mi experiencia previa",
+                    "content": "Durante los últimos dos años he sido desarrollador web a nivel profesional, los primeros nueve meses trabajé como desarrollador full stack, luego pasé a un puesto de front-end, donde actualmente sigo trabajando; Antes de eso, cuando estaba en la universidad, participé como voluntario en el desarrollo de proyectos para mi facultad junto con algunos de mis compañeros de clase."
+                },
+                "skills": {
+                    "title": "Mis habilidades duras",
+                    "skills": {
+                        "languages": "Lenguajes",
+                        "databases": "Bases de datos"
+                    }
+                }
+            }
         }
     }
 }
