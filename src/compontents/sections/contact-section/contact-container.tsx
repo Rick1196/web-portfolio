@@ -1,7 +1,9 @@
+import { useTranslation } from "next-i18next";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 interface ContactDataI { title: string, email: string, message: string };
 const ContactSection: React.ComponentType<Record<string, never>> = () => {
+    const { t } = useTranslation('common');
     const [loadingForm, setLoadingForm] = useState(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactDataI>();
     const sendMail = (data: ContactDataI) => {
@@ -27,23 +29,23 @@ const ContactSection: React.ComponentType<Record<string, never>> = () => {
         <>
             <div className="contact-container">
                 <div className="contact-card">
-                    <div className="contact-title">Contact Me</div>
+                    <div className="contact-title">{t('sections.contactSection.title')}</div>
                     <form className="contact-form" onSubmit={handleSubmit(sendMail)}>
                         <div className="form-group">
-                            <label htmlFor="message-title">Title</label>
-                            <input  {...register("title", { required: true })} type="text" id="message-title" name="message-title" />
+                            <label htmlFor="message-title">{t('sections.contactSection.fields.title.label')}</label>
+                            <input  {...register("title", { required: true })} type="text" id="message-title" name="message-title" placeholder={t('sections.contactSection.fields.title.placeholder')} />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="email-address">Your email address</label>
-                            <input {...register("email", { required: true })} type="email" id="email-address" name="email-address" />
+                            <label htmlFor="email-address">{t('sections.contactSection.fields.email.label')}</label>
+                            <input {...register("email", { required: true })} type="email" id="email-address" name="email-address" placeholder={t('sections.contactSection.fields.email.placeholder')} />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="message-content">Message</label>
-                            <textarea {...register("message", { required: true })} name="message-content" id="message-content" cols={30} rows={10}></textarea>
+                            <label htmlFor="message-content">{t('sections.contactSection.fields.message.label')}</label>
+                            <textarea {...register("message", { required: true })} name="message-content" id="message-content" cols={30} rows={10} placeholder={t('sections.contactSection.fields.message.placeholder')}></textarea>
                         </div>
                         <div className="form-footer">
                             <button type='submit' className="submit-button" name="send-message" disabled={loadingForm}>
-                                Send
+                                {t('sections.contactSection.sendButton')}
                                 {(loadingForm) && <div className="loading-spinner"></div>}
                             </button>
                         </div>

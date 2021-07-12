@@ -1,0 +1,32 @@
+{
+    "navigationBar": {
+        "links": {
+            "personalInfo":"Personal Info",
+            "projects":"Projects",
+            "contact":"Contact"
+        },
+        "buttons":{
+            "translate":"Translate to ES"
+        }
+    },
+    "sections": {
+        "contactSection": {
+            "title": "Contact Me",
+            "fields": {
+                "title": {
+                    "label": "Message subject",
+                    "placeholder": "Message subject"
+                },
+                "email": {
+                    "label": "Your email address",
+                    "placeholder": "Your email address"
+                },
+                "message": {
+                    "label": "Message content",
+                    "placeholder": "Message content"
+                }
+            },
+            "sendButton": "Send"
+        }
+    }
+}

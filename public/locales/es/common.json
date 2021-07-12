@@ -1,0 +1,32 @@
+{
+    "navigationBar": {
+        "links": {
+            "personalInfo":"Información personal",
+            "projects":"Projectos",
+            "contact":"Contacto"
+        },
+        "buttons":{
+            "translate":"Traducier a EN"
+        }
+    },
+    "sections": {
+        "contactSection": {
+            "title": "Contactame",
+            "fields": {
+                "title": {
+                    "label": "Asunto del menesaje",
+                    "placeholder": "Asunto del menesaje"
+                },
+                "email": {
+                    "label": "Tu dirección de correo",
+                    "placeholder": "Tu dirección de correo"
+                },
+                "message": {
+                    "label": "Mensaje",
+                    "placeholder": "Mensaje"
+                }
+            },
+            "sendButton": "Enviar"
+        }
+    }
+}
