@@ -1,6 +1,8 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image'
-import nextLogo from '../../../../public/icons/next.jpg'
+import Link from 'next/link';
+import React from 'react';
+import pomodoroPicture from '../../../../public/pictures/pomodoro-app.png';
 const ProjectsSections: React.ComponentType<Record<string, never>> = () => {
     const { t } = useTranslation('common');
     return (
@@ -11,15 +13,24 @@ const ProjectsSections: React.ComponentType<Record<string, never>> = () => {
             <div className="cards-deck">
                 <div className="item-card">
                     <div className="card-item-header">
-                        <Image className="bordered-image" alt="header-card-project" src={nextLogo} layout="fill" />
+                        <Image className="bordered-image" alt="header-card-project" src={pomodoroPicture} layout="fill" />
                     </div>
                     <div className="card-item-content">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        {t('sections.projects.todo-app.description')}
+                        <p>Todos</p>
+                        <ul>
+                            <li>{t('sections.projects.todo-app.todos.design')}</li>
+                            <li>{t('sections.projects.todo-app.todos.teams')}</li>
+                            <li>{t('sections.projects.todo-app.todos.tasks')}</li>
+                        </ul>
                     </div>
                     <div className="card-item-footer">
-                        <button type='submit' className="submit-button">
+                        <a target="_blank"  rel="noreferrer" href="https://pomodoro-app-44c9b.web.app/">
                             {t('sections.projectsSections.commonButton')}
-                        </button>
+                        </a>
+                        <a href="https://github.com/Rick1196/pomodoro-front" rel="noreferrer" target="_blank">
+                            {t('sections.projectsSections.repoButton')}
+                        </a>
                     </div>
                 </div>
             </div>

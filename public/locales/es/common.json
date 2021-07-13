@@ -30,7 +30,8 @@
         },
         "projectsSections": {
             "title": "Mis proyectos",
-            "commonButton": "Ver un demo"
+            "commonButton": "Ver un demo",
+            "repoButton": "Github Repo"
         },
         "personalSection": {
             "subsSections": {
@@ -49,6 +50,16 @@
                         "languages": "Lenguajes",
                         "databases": "Bases de datos"
                     }
+                }
+            }
+        },
+        "projects":{
+            "todo-app":{
+                "description":"Pomodoro-app es una app para el manejo de tareas",
+                "todos":{
+                    "design":"Diseño responsivo",
+                    "teams":"Manejar mas de un equipo por usuario",
+                    "tasks":"Agregar caracteristicas a una tarea(archivos, comentarios, pomodoros, todos)"
                 }
             }
         }

@@ -30,7 +30,8 @@
         },
         "projectsSections": {
             "title": "My projects",
-            "commonButton": "View a live demo"
+            "commonButton": "View a live demo",
+            "repoButton": "Github Repo"
         },
         "personalSection": {
             "subsSections": {
@@ -49,6 +50,16 @@
                         "languages":"Languages",
                         "databases":"Databases"
                     }
+                }
+            }
+        },
+        "projects":{
+            "todo-app":{
+                "description":"Pomodoro app it's and application to manage tasks",
+                "todos":{
+                    "design":"Responsive design",
+                    "teams":"Manage more than one team per user",
+                    "tasks":"Improve task object(files, comments, pomodoros, todos)"
                 }
             }
         }
