@@ -61,6 +61,12 @@
                     "teams":"Manage more than one team per user",
                     "tasks":"Improve task object(files, comments, pomodoros, todos)"
                 }
+            },
+            "weather-app":{
+                "description":"Weather App, know the weather of your current location or search a new locations",
+                "todos":{
+                    "internazionalitation":"internazionalitation"
+                }
             }
         }
     }

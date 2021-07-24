@@ -61,6 +61,12 @@
                     "teams":"Manejar mas de un equipo por usuario",
                     "tasks":"Agregar caracteristicas a una tarea(archivos, comentarios, pomodoros, todos)"
                 }
+            },
+            "weather-app":{
+                "description":"Weather App, conoce el clima de ubicación o busca una ubicacion",
+                "todos":{
+                    "internazionalitation":"Internacionalización"
+                }
             }
         }
     }
