@@ -1,13 +1,11 @@
 {
-    "navigationBar": {
-        "links": {
-            "personalInfo": "Personal Info",
-            "projects": "Projects",
-            "contact": "Contact"
-        },
-        "buttons": {
-            "translate": "Translate to ES"
-        }
+    "description": {
+        "title": "I'am a web develper",
+        "description": "I build awesome web projects"
+    },
+    "presentation": {
+        "title": "Hi, I'm Ricardo, nice to meet you.",
+        "description": "I'm being a web developer for 2 years ago, I've worked for a big company as a trainy, I've worked as a volunteer developer for my college and currently, I work for a health company as a front-end developer; \n I love learning new things and i try to share my knowledge at dev.to."
     },
     "sections": {
         "contactSection": {
@@ -47,26 +45,20 @@
                 "skills": {
                     "title": "My hard skills",
                     "skills": {
-                        "languages":"Languages",
-                        "databases":"Databases"
+                        "languages": "Languages",
+                        "databases": "Databases"
                     }
                 }
             }
         },
-        "projects":{
-            "todo-app":{
-                "description":"Pomodoro app it's and application to manage tasks",
-                "todos":{
-                    "design":"Responsive design",
-                    "teams":"Manage more than one team per user",
-                    "tasks":"Improve task object(files, comments, pomodoros, todos)"
-                }
+        "projects": {
+            "todo-app": {
+                "title":"Pomodor app",
+                "description": "Pomodoro app it's and application to manage tasks, made with Angular and Firebase"
             },
-            "weather-app":{
-                "description":"Weather App, know the weather of your current location or search a new locations",
-                "todos":{
-                    "internazionalitation":"internazionalitation"
-                }
+            "weather-app": {
+                "title":"Weather App",
+                "description": "Weather App, know the weather of your current location or search a new locations, made with React"
             }
         }
     }

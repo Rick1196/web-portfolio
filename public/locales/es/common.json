@@ -1,4 +1,12 @@
 {
+    "description":{
+        "title":"Soy un desarrollador web",
+        "description":"Construyo asombrosos proyectos"
+    },
+    "presentation":{
+        "title":"Hola, soy Ricardo, un gusto conocerte.",
+        "description":"Soy desarrollador web hace desde 2 años, trabajé para una gran empresa  como becario, trabajé como desarrollador voluntario para mi universidad y actualmente trabajo para una empresa de salud como desarrollador front-end; \n Me apasiona aprender nuevas cosas y trato de compratir mi conocimiento en dev.to."
+    },
     "navigationBar": {
         "links": {
             "personalInfo": "Información personal",
@@ -55,18 +63,12 @@
         },
         "projects":{
             "todo-app":{
-                "description":"Pomodoro-app es una app para el manejo de tareas",
-                "todos":{
-                    "design":"Diseño responsivo",
-                    "teams":"Manejar mas de un equipo por usuario",
-                    "tasks":"Agregar caracteristicas a una tarea(archivos, comentarios, pomodoros, todos)"
-                }
+                "title":"Todo App",
+                "description":"Pomodoro-app es una app para el manejo de tareas, hecho con Angular y firebase"
             },
             "weather-app":{
-                "description":"Weather App, conoce el clima de ubicación o busca una ubicacion",
-                "todos":{
-                    "internazionalitation":"Internacionalización"
-                }
+                "title": "Weather App",
+                "description":"Weather App, conoce el clima de ubicación o busca una ubicacion, hecho con React"
             }
         }
     }

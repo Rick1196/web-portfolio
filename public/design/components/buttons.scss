@@ -1,0 +1,26 @@
+@use '../util' as *;
+.base-button {
+    border-radius: rem(15);
+}
+.action-button {
+    @extend .base-button;
+    height: rem(35);
+    width: rem(150);
+    border: solid 2px var(--amethyst);
+    background-color: #fff;
+}
+
+.action-button-large{
+    @extend .action-button;
+    width: 100%
+}
+
+.action-button:hover {
+    background-color: var(--amethyst);
+    color: #fff;
+    cursor: pointer;
+}
+.action-button:active {
+    background-color: var(--amethyst);
+    color: #fff;
+}

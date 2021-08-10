@@ -1,0 +1,21 @@
+@use '../util' as *;
+a, a:visited, a:active{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, li, .title, .card, .hero-list, label{
+    color: var(--amethyst);
+}
+
+.title{
+    text-align: center;
+    @include breakpoint(medium) {
+        font-size: rem(40);
+    }
+    @include breakpoint-down(small) {
+        font-size: rem(40);
+    }
+    @include breakpoint(large) {
+        font-size: rem(50);
+    }
+}

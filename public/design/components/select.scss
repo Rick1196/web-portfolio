@@ -1,0 +1,18 @@
+@use '../util' as *;
+.base-select {
+    width: rem(150);
+    border: none;
+    option {
+        background-color: #fff;
+        border: none;
+        outline:0px;
+    }
+}
+.base-select:focus {
+    outline: none;
+    option {
+        background-color: #fff;
+        border: none;
+        outline:0px;
+    }
+}

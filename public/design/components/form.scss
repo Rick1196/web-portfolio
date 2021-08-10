@@ -1,0 +1,35 @@
+@use '../util' as *;
+.form {
+    width: 100%;
+    padding: rem(30);
+    &__group {
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        margin: rem(10);
+    }
+    input {
+        border-radius: rem(10);
+        height: rem(40);
+        border-width: rem(1);
+        border-color: var(--amethyst);
+    }
+    input:focus, textarea:focus {
+        outline: none;
+    }
+    input::placeholder {
+        color: var(--warm-black);
+        padding-left: rem(20);
+    }
+    textarea {
+        border-color: var(--amethyst);
+        border-radius: rem(10);
+        resize: none;
+        padding: rem(20);
+    }
+    &__footer {
+        width: 100%;
+        margin-top: rem(15);
+    }
+}

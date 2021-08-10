@@ -1,12 +1,18 @@
-import Head from "next/head";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
-import React from "react";
-import Content from "../src/components/content";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import Footer from "../src/components/footer";
 import NavBar from "../src/components/nav-bar";
+import ContactSection from "../src/components/contact-container";
 import { loadStaticProps } from "../src/functions/get-static-props";
-
-const Portfolio = () => {
+import Head from "next/head";
+interface ContactDataI {
+  title: string;
+  email: string;
+  message: string;
+}
+const ContactPage = () => {
   return (
     <>
     <Head>
@@ -23,14 +29,15 @@ const Portfolio = () => {
         <title>Ricardos Work Portafolio</title>
       </Head>
       <NavBar>
-        <Link href="/contact" passHref>
-          <button className="action-button">Contact me</button>
+        <Link href="/" passHref>
+          <button className="action-button">Home</button>
         </Link>
       </NavBar>
-      <Content />
+      <ContactSection></ContactSection>
       <Footer />
     </>
   );
 };
-export default Portfolio;
+
+export default ContactPage;
 export const getStaticProps = loadStaticProps;
