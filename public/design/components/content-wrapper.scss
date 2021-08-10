@@ -227,6 +227,7 @@
         }
     }
     &__content {
+        overflow-y: auto;
         @include breakpoint(large) {
             grid-column: 2 / 4;
             grid-row: 1 / 2;
