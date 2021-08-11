@@ -238,6 +238,16 @@ export const Content = () => {
                 {t("sections.projects.todo-app.description")}
               </div>
             </div>
+            <div className="card__code">
+              <Link href="https://github.com/Rick1196/pomodoro-front" passHref>
+                <a target="_blank">Github</a>
+              </Link>
+            </div>
+            <div className="card__ref">
+              <Link href="https://pomodoro-app-44c9b.web.app/" passHref>
+                <a target="_blank">Live Demo</a>
+              </Link>
+            </div>
           </div>
           <div className="card">
             <div className="card__image">
@@ -250,6 +260,16 @@ export const Content = () => {
               <div className="card__description">
                 {t("sections.projects.weather-app.description")}
               </div>
+            </div>
+            <div className="card__code">
+              <Link href="https://github.com/Rick1196/weather-app" passHref>
+                <a target="_blank">Github</a>
+              </Link>
+            </div>
+            <div className="card__ref">
+              <Link href="https://weather-app-navy-chi.vercel.app/" passHref>
+                <a target="_blank">Live Demo</a>
+              </Link>
             </div>
           </div>
         </div>
