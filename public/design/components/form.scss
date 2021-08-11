@@ -2,6 +2,7 @@
 .form {
     width: 100%;
     padding: rem(30);
+    opacity: 1;
     &__group {
         display: flex;
         flex-direction: column;
@@ -15,7 +16,8 @@
         border-width: rem(1);
         border-color: var(--amethyst);
     }
-    input:focus, textarea:focus {
+    input:focus,
+    textarea:focus {
         outline: none;
     }
     input::placeholder {
@@ -32,4 +34,30 @@
         width: 100%;
         margin-top: rem(15);
     }
+}
+
+.out {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.message {
+    opacity: 0;
+    text-align: center;
+    text-justify: center;
+    @include breakpoint(medium) {
+        font-size: rem(40);
+    }
+    @include breakpoint-down(small) {
+        font-size: rem(40);
+    }
+    @include breakpoint(large) {
+        font-size: rem(50);
+    }
+}
+
+.success {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(rem(-300));
 }

@@ -29,14 +29,19 @@ export default (req: NextApiRequest, res: NextApiResponse<any>) => {
     ${req.body.email}</p>`
   }
   transporter.sendMail(mailData, function (err, info) {
-    if (err) {
-      res.status(500).json(err);
-      console.log(err)
-    }
-    else {
-      console.log(info)
-      res.status(200).json({message:'email sended'});
+    try{
+      if (err) {
+        res.status(500).json(err);
+        console.log(err)
+      }
+      else {
+        console.log(info)
+        res.status(200).json({message:'email sended'});
+      }
+      res.end();
+    }catch(error){
+      console.error(error);
+      res.end();
     }
   })
-  res.end();
 }

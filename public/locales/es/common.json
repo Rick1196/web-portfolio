@@ -34,7 +34,8 @@
                     "placeholder": "Mensaje"
                 }
             },
-            "sendButton": "Enviar"
+            "sendButton": "Enviar",
+            "message":"He recibido tu mensaje. 😃😃😃"
         },
         "projectsSections": {
             "title": "Mis proyectos",

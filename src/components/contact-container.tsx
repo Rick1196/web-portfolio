@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 interface ContactDataI {
   title: string;
@@ -9,6 +9,7 @@ interface ContactDataI {
 const ContactSection: React.ComponentType<Record<string, never>> = () => {
   const { t } = useTranslation("common");
   const [loadingForm, setLoadingForm] = useState(false);
+  const [success, setSuccess] = useState(false);
   const {
     register,
     handleSubmit,
@@ -29,16 +30,29 @@ const ContactSection: React.ComponentType<Record<string, never>> = () => {
       reset({ email: "", title: "", message: "" });
       console.log("Response received");
       if (res.status === 200) {
+        setSuccess(true);
         console.log("Response succeeded!");
       }
       setLoadingForm(false);
     });
   };
+  useEffect(() => {
+    if (success === true) {
+      setTimeout(() => {
+        reset({ email: "", title: "", message: "" });
+        setSuccess(false);
+      }, 4000);
+    }
+  }, [reset, success]);
   return (
     <>
       <div id="content-wrapper" className="content-wrapper">
-        <div className="title">{t("sections.contactSection.title")}</div>
-        <form className="form" onSubmit={handleSubmit(sendMail)}>
+        <form
+          id="contact-form"
+          className={success === false ? "form" : "form out"}
+          onSubmit={handleSubmit(sendMail)}
+        >
+          <div className="title">{t("sections.contactSection.title")}</div>
           <div className="form__group">
             <label htmlFor="message-title">
               {t("sections.contactSection.fields.title.label")}
@@ -46,8 +60,8 @@ const ContactSection: React.ComponentType<Record<string, never>> = () => {
             <input
               {...register("title", { required: true })}
               type="text"
-              id="message-title"
-              name="message-title"
+              id="title"
+              name="title"
               placeholder={t(
                 "sections.contactSection.fields.title.placeholder"
               )}
@@ -60,8 +74,8 @@ const ContactSection: React.ComponentType<Record<string, never>> = () => {
             <input
               {...register("email", { required: true })}
               type="email"
-              id="email-address"
-              name="email-address"
+              id="email"
+              name="email"
               placeholder={t(
                 "sections.contactSection.fields.email.placeholder"
               )}
@@ -73,8 +87,8 @@ const ContactSection: React.ComponentType<Record<string, never>> = () => {
             </label>
             <textarea
               {...register("message", { required: true })}
-              name="message-content"
-              id="message-content"
+              name="message"
+              id="message"
               cols={30}
               rows={10}
               placeholder={t(
@@ -90,10 +104,12 @@ const ContactSection: React.ComponentType<Record<string, never>> = () => {
               disabled={loadingForm}
             >
               {t("sections.contactSection.sendButton")}
-              {loadingForm && <div className="loading-spinner"></div>}
             </button>
           </div>
         </form>
+        <div className={success === true ? "message success" : "message"}>
+          {t('sections.contactSection.message')}
+        </div>
       </div>
     </>
   );

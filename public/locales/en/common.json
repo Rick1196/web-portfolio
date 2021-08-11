@@ -24,7 +24,8 @@
                     "placeholder": "Message content"
                 }
             },
-            "sendButton": "Send"
+            "sendButton": "Send",
+            "message":"I have recived your message. 😃😃😃"
         },
         "projectsSections": {
             "title": "My projects",
